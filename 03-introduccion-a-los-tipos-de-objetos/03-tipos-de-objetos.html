@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Introducción a los tipos de objetos</h1>
+  <h2>Concepto de mutabilidad e inmutabilidad</h2>
+  <p>
+    - En python casi todo es un objeto, lo podemos manipular como tal.
+    - concepto mutabilidad e inmutabilidad. Cuando asignamos un valor a una variable y a esa misma variable después le asignamos otro valor, el nuevo valor se almacena en otro punto de la memoria aunque la variable sea la misma. El valor anterior de la variable se queda por ahí almacenado en la memoria, desechado, inconexo, pero se queda guardado durante un tiempo. Si volvieramos a darle el primer valor otra vez a la variable, esta volvería a conectarse con el punto de la memoria donde se almacenó la primera vez, a apuntar hacia él de nuevo, y el segundo punto de la memoria donde se almacenó el segundo valor de la variable quedaría por ahí guardado en la memoria. Estos puntos de la memoria con valores almacenados pero no relacionados con ninguna variable se quedarían por ahí guardados hasta que el recolector de basura de Python los eliminara. Python tiene esta funcionalidad,  un proceso de fondo que cuando cuando se ejecuta "recoge la basura", es decir, limpia la memoria de aquellas zonas de la memoria no referenciadas. Si ya no hay ninguna variable apuntando a esas direcciones de memoria que contienen valores, cuando se ejecuta el recolecor de basura se eliminan esas direcciones. Esto ocurre así porque es más rápido y más óptimo para el programa.
+
+    - Con la función "id(nombre-de-variable), el intérprete nos muestra la dirección específica en la memoria de una variable".
+
+    - Respecto a esto anterior, podemos decir que las variables en Python son una referencia a una zona de memoria donde hay un valor exacto, cuando yo asigno un valor a una variable, este valor se almacena en una zona de la memoria y si cambio el valor, cambia la dirección de la memoria a diferencia de otros lenguajes en los que cuando se cambia el valor de una variable lo que cambia en el memoria es el valor en esa misma dirección. Esto quiere decir que los valores en Python son INMUTABLES, cuando asginamos un valor a una zona de la memoria ese valor no va a variar.
+
+    - Además Python es un lenguaje dinámico, es decir, es capaz de discernir según el valor, el tipo de dato que contiene una variable.
+
+    - En Python, por cierto, la convención es utilizar comillas simples para strings.
+  </p>
+
+  <h2>Tipos de datos inmutables</h2>
+  <p>
+    - Números enteros: No son mutables, si asigno un valor numérico a una zona de memoria ese número permanecerá ahí aunque luego a la variable que lo contiene se le asgine otro valor.
+    EJ: a=1
+    - Cadenas de texto (Strings): En casi cualquier otro lenguaje se podría cambiar el valor de un string pero no en python. Es decir, a una misma variable se podría asignar otro valor de string pero se guardaría en otro punto de la memoria. Además, no se podrían cambiar letras por separado, el string es inmutable en su totalidad.
+    EJ: a="hola"
+    - booleans: True o False
+    - floats: decimales
+    - Tuplas: Arrays inmutables, listas cuyos valores se declaran entre paréntesis. Ocurre lo mismo que con los strings, una vez definida la tupla, no se pueden alterar sus valores.
+    EJ: a=('u', 3, "adios")
+  </p>
+
+  <h2>Tipos de datos mutables</h2>
+  <p>
+    - Listas: A diferencia de la tupla, las listas son mutables, se pueden alterar sus valores.
+    EJ: a=['a', 1, "ey"]
+
+    Para varían el contenido de la lista, utilizaríamos la siguiente sintaxis: lista[posición-de-la-lista]=nuevo-valor.
+
+    Por ejemplo, para cambiar el valor del primer elemento de la lista por una z, la sintaxis sería:
+    lista[0]='z'.
+
+    Para añadir elementos a una lista: lista.append(). Solo se pueden añadir de uno en uno, si se quiere añadir varios elementos se escriben varios append
+    
+    Para eliminar elementos, lista.remove().
+
+    Para anidar una lista dentro de otra, lista.append(lista2)
+
+    Para crear listas vacías, lista =[]. Sirve para crear listas a las que luego ir añadiendo elementos con el append.
+
+
+    - Diccionarios: Son muy similares a los JSON. En Python es muy común trabajar con los diccionarios y con los JSONs porque son lo que se dice intercambiables. Los diccionarios están compuestos por claves y por valores:
+
+    diccionario = {
+      "clave": "valor", <!--Ojo a la coma, se pone para separar los elementos cuando hay varios-->
+      "clave2": "valor2"
+    }
+
+    Los diccionarios pueden contener todos los tipos de datos, incluso otros diccionarios.
+
+    Se puede imprimir en pantalla el diccionario y aparecerá el diccionario entero. También se puede imprimir los elementos concretos del diccionario a través de su clave: print(diccionario['clave']).
+    Se puede sustituir el valor de las claves: diccionario['clave'] = nuevo-valor.
+    Se puede eliminar elementos de un diccionario de dos maneras: con pop y con del:
+    diccionario.del('clave')
+    diccionario.pop('clave')
+    La diferencia entre ellos es que cuando eliminamos con del, el diccionario no nos devuelve nada, se elimina del todo. Con pop, el diccionario nos devuelve el valor que hemos eliminado y podemos almacenarlo en otra variable:
+
+    elementoPopEliminado = diccionario.pop('clave1')
+    <!--Probando en el VS Code parece que no me deja hacer esto. En la terminal tampoco-->
+    <!--Ya me funcionó, creo que el proceso es alamcenar directamente en una variable nueva el comando de eliminación de la clave, y no eliminar primero la clave y luego guardarla en una variable-->
+
+    - sets (conjuntos): Son listas pero con la diferencia de que en las listas se pueden repetir valores y los conjuntos no pueden contener valores duplicados. Aunque declaremos valores duplicados, el valor del set será solo de elementos únicos. Se escriben entre llaves en vez de corchetes. Se pueden hacer una serie de operaciones matemáticas con ellos:
+     - set1 | set2. La suma. De esta manera se sumarían los valores de dos sets sin sumarse los duplicados. <!-- El símbolo | representa la unión entre un elemento y otro-->
+     - set1 & set2. La intersección. Lo que hace es representar los elementos que se repiten de uno y otro set. Solo muestra los elementos que coinciden.
+     - set1 - set2. La diferencia. Muestra los elementos diferentes entre los sets, los elementos que solo existen en el primer set de la resta.
+     - set1 ^ set2. La diferencia simétrica. Muestra los valores que son únicos entre los dos sets. No muestra los valores que aparecen en ambos sets.    
+  </p>
+
+  <h2>Métodos y operadores</h2>
+  <h3>Métodos</h3>
+  <p>
+    Con las cadenas de texto (strings), se pueden hacer operaciones con funciones/métodos, que además se pueden combinar entre ellos y ejecutar a la vez. Ponemos unos pocos:
+
+    - help(str). Con este comando nos aparece la documentación de lo que se puede hacer con los strings en python, todos los métodos y operadores y tal.
+    - variable.capitalize(). Pone la primera letra de la cadena en mayúscula y el resto en minúsculas. Capitaliza la primera letra.
+    - variable.title(). Pone todas las primeras letras de cada palabra de la cadena en mayúsculas.
+    - varible.lower. Pone todas las letras de la cadena en minúsculas.
+    - variable.upper. Pone todas las letras de la cadena en mayúsculas.
+    - variable.replace('x', 'y'). Reemplaza todas las letras x de una cadena de texto por la letra y.
+    - variable.find('palabra'). Indica la posición de la cadena empieza esa palabra en caso de que exista dentro de la cadena.
+    - variable.split(). Convierte una cadena de texto en una lista, siendo cada palabra de la cadena un elemento de la lista. Las comas y los puntos formarían parte del elemento al que están pegados.
+    - variable.split(','). Convierte una cadena de texto en una lista pero hace que lo que hay después de cada coma sea un elemento.
+    - ' '.join(lista). Convierte una lista en una cadena de texto. Entre comillas se pone lo que queremos que separe los elementos de la lista en la cadena de texto: un espacio, los separa con un espacio, un guión, los separa con un guión, etc.
+    - variable=' '.join(lista). Guarda en una varible una lista convertida a cadena de texto.
+    - variable.isnumeric(). Nos dice si el contenido de la cadena de texto es númerica de manera booleana.
+
+
+
+    Un ejemplo de métodos combinados:
+      p='Hola, esto es un textO'
+
+      p.replace(',', ' ').lower().split()
+
+    Estos métodos combinados quitarían la coma de la cadena, pondráin todas las letras en minúsculas y harían una lista de los elementos. 
+  </p>
+
+  <h3>Operadores</h3>
+  <h4>Operadores aritméticos</h4>
+  <p>
+    - +. Operador de suma.
+    - -. Operador de resta.
+    - *. Operador de multiplicación.
+    - /. Operador de división.
+    - %. Operador de módulos. Sirve para calcular el resto de la operación de dividir dos elementos.
+    - //. Operador de división. Sirve para calcular una división pero sin decimales, dando números enteros. No cuenta con el resto.
+    - **. Operador de potencias. Para calcular la potencia de un elemento. No muchos lenguajes lo tienen.
+
+    Con la expresión round(varible, ndecimales), el resultado de una operación se redondearía con la cantidad de decimales elegidos.
+  </p>
+
+  <h4>Operadores de asginación</h4>
+  <p>
+    - =. Se asigna el valor de la derecha al de la izquierda del operador.
+    - += Se suma el valor de la derecha a lo que ya vale de por si el valor de la izquierda. Se puede utilizar la suma o cualquier operador aritmético. EJ: a += x == a = a+x.
+    
+    Más adelante iremos viendo los siguientes:
+
+    - &=.
+    - |=.
+    - ^=.
+    - >>=.
+    - <<=.
+  </p>
+
+  <h4>Operadores de comparación</h4>
+  <p>
+    - ==.
+    - !=.
+    - >.
+    - <.
+    - >=.
+    - <=.
+  </p>
+
+  <h4>Operadores de identidad</h4>
+  <p>
+    - is.
+    - is not.
+  </p>
+
+  <h4>Operadores de membresía</h4>
+  <p>
+    - in.
+    - not in.
+  </p>
+
+  <h2>Operadores de bit</h2>
+  <p>
+    - &.
+    - |.
+    - ^.
+    - ~. 
+    - <<.
+    - >>. 
+
+    <!--Ojo, no confundir con los operadores de sets, son los mismos símbolos pero no hacen lo mismo-->
+  </p>
+
+  <p>
+    Los operadores de identidad y membresía son bastante característicos de phthon, no suelen verse en otros lenguajes.
+  </p>
+
+  <p>
+    Quedan pendientes en esta sesión estos últimos operadores y hacer como una psudotarea para que investiguemos: Buscar cómo utilizar la librería math (import math) y ver qué funciones tiene la librería (help(math)) para hacer cosas como math.pi, math.floor(5.9), math.ceil(5.9). Mirar la documentación desde la terminal y desde la página oficial de Python. Hacer ejercicios para probar las funciones.
+  </p>
+  <p>
+    PSEUDOEJERCICIOS. math es un módulo de python que permite trabajar con funciones matemáticas definidas en el estándar de C. Con este modulo se pueden trabajar con constantes definidas como el número pi o el número e y trabajar con funciones como math.floor(), que devuelve el número entero de una operación descartando el resto (redondea hacia abajo), o funciones como math.ceil, que devuelve el número entero de una operación pero redondeando hacia arriba.
+  </p>
+</body>
+</html>

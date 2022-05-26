@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Introducción a Python</h1>
+  <p>
+    - Lenguaje de programación interpretado del tipo scripting.
+    - Diferentes implementaciones: Cython (Basado en C) es la típica, Jython (Basado en Java), etc.
+    - Hoy en día se están utilizando las versiones 2 y 3 de Python.
+    - El intérprete de Python en Windows se instala, en Mac y Linux viene por defecto y se ejecuta desde la terminal.
+    - Un intérprete es un programa que ejecuta paso a paso el código fuente de otro programa.
+    - Más lento pero más portable, incluso con los procesadores y memorias de hoy en días no se aprecia tanto esa lentitud.
+  </p>
+  <p>
+    - Para abrir el intérprete: se ejecuta el comando "Python3.10" o la versión que haya instalada. Para cerrarlo, se escribe "exit()", ctrl+d o "quit()".
+  </p>
+  <p>
+    Para saber qué versiones del intérprete de Python tenemos instaladas en la computadora:
+    - En windows se ve en "inicio".
+    - En Linux/Mac se pueden utilizar los siguientes comandos:
+
+      ls -l /bin/python*
+
+      ls -l /usr/bin/python*
+
+      ls -1 /usr/bin/python* (menos información)
+
+      which python
+  </p>
+  <p>
+    - El código de las versiones 3 y 2 de Python cambia bastante.
+  </p>
+  <p>
+    - Los archivos de código fuente de python tienen la extensión .py
+    - Para crear un documento: "vi nombre-documento.py"
+    - Para ejecutar el código de un documento: "python3.10 nombre-documento.py (o la versión que sea).
+    - Para mostrar el código del documento : "cat nombre-documento.py"
+    
+  </p>
+  <p>
+    - Es un lenguaje orientado a objetos pero también podemos programar de forma secuencial, es decir, que escribimos el código del programa todo seguido y se ejecuta de principio a fin de manera secuencial (programar un script, un pequeño programa), (programación declarativa).
+    - En python no estamos obligados a crear clases ni objetos ni nada para programar, aunque se puede hacer.
+    - También soporta herencia y herencia múltiple.
+  </p>
+  <p>
+    - Python tiene tipado dinámico, es decir, no hace falta declarar el tipo de dato que estamos utilizando, el intérprete lo determina automáticamente (vs tipado estático).
+    - Si escribimos el comando "type(nombre-de-una-variable)", el intérprete nos dice qué tipo de dato es esa variable (ingerencia de tipos, automáticamente determina qué tipo de dato tiene una variable en función de su valor).
+    - Aparte de la clasificación de lenguajes de tipado dinámico vs tipado estático, existe otra clasificación complementaria: Tipado fuerte vs tipado débil. Python es de tipado fuerte. El tipado fuerte solo permite realizar realizar operaciones entre mismos tipos de datos y el tipado débil permite realizar operaciones entre tipos de datos diferentes.
+  </p>
+  <h2>Usos de Python</h2>
+  <p>
+    - Para automatizar tareas (administración de sistemas).
+    - Scripts de gestión.
+    - Sistemas de Backend.
+    - Calculo científico: Matemática complejas, algoritmos, visualizacione de datos, depplerarnin, automatic procesing.
+  </p>
+  <p>
+    - Programas muy utilizados en DevOps para automatizar tareas que están escritos en Python: Ansible (funciona a través de playbooks) y SaltStack.
+    - Para crear interfaces gráficas con Python: WxPython, PyGYK y PyQt. Estas dos últimas librerías son ¿buildings?, están hechas para Python pero utilizan una librería escrita en otro lenguaje por debajo: GTK o QT.
+    - La librería gráfica para Python más utilizada es TKinter, une Python con la herramienta TCL/TK.
+  </p>
+  <p>
+    Librerías de Python para backend: El framework Django o el framework Flask son muy utilizadas.
+  </p>
+  <p>
+    La mayoría de bases de datos conocidas están soportardas en Python:
+    - Para postgreSQL: psycopg o pygreSQL.
+    - Para MySQL: Connector/Python o MariaDB.
+    - Para NoSQL: PyMongo de MongoDB o Pysqlite3.
+  </p>
+  <p>
+    - Para hacer algoritmos de datos en python: NumPy o SciPy.
+    - Pandas: Librería de análisis de datos de Python. Trabaja con datos tabulares (rollo excel). Admite trabajar con hojas con formato ecel y crear documentos con ese formato.
+  </p>
+</body>
+</html>
