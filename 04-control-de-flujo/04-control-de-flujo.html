@@ -9,7 +9,85 @@
 <body>
   <h1>Control de flujo</h1>
   <p>
-    
+    Condiciones que guían el flujo de ejecución de un programa. Importante porque los programas no son secuenciales, actúan de una manera o de otra dependiendo de los datos con los que trabajemos en cada momento.
+    Condiciones: El código de una condición se ejecuta si y solo si se cumple la condición (if) o mientras se cumpla la condición (while).
+  </p>
+  <p>
+    Las operaciones condicionales de control de flujo se basan en los tests de veracidad. Los test de veracidad consisten en ejecutar una o un conjunto de operaciones cuyo resultado final solo puede devolver un valor: True (la condición se cumple o False (la condición no se cumple).
+  </p>
+  <p>
+    Para trabajar con los test de veracidad, utilizamos direfentes operadores:
+
+    Operadores condicionles: Para las operaciones.
+
+    - >
+    - >=
+    - ==
+    - <=
+    - <
+    - !=
+
+    Operadores lógicos: Para combinar operaciones. (reducción de la comparación)
+
+    - and.
+    - or.
+    - not.
+
+  </p>
+  <p>
+    Tablas de la verdad:
+    - and. La condición solo se cumple cuando se cumplen las dos operaciones.
+    - or. La condición solo no se cumple solo cuando ambas operaciones son falsas.
+    - xor (^). La condición se cumple cuando uno de los dos es falso.
+  </p>
+  <p>
+    - Sentencia condicional: if.
+
+    OJO con la identación de las sentencias condicionales en Python. El símbolo del espacio y el símbolo del tabulador son diferentes, en una misma sentencia o se usa siempre el tabulador o siempre el espacio.
+
+    Si se cumple la primera condición en un if, se ejecuta el código del if y ya no se ejecuta más código si lo hubiera aunque se cumpliese (elif o else).
+
+    Se pueden oner varios elif, y un solo else.
+
+
+    - Bucle condicional: while
+
+    Palabra especial "break" para romper el bucle.
+    Palabra especial "continue" para forzar una siguiente iteración del bucle. 
+
+
+    - Bucle for
+
+    Se puede utilizar para recorrer listas o tuplas. Sintaxis:
+      for variableFor in variableExterna
+        acciones
+    En los bucles for se utilizan los operadores de membresía:
+      - in
+      - not in
+    Se declara una variable propia del bucle para trabajar sobre otra variable previamente declarada fuera del for.
+
+    También se pueden recorrer rangos de valores: range (que no tienen por que depender de una variable externa).
+
+    Para saber la longitud de una lista o una tupla: len (de "lenght")
+    Para ordenar una lista desordenada: sorted.
+    Para ordenar una lista en orden inverso: reverse=True.
+
+    En Python, a diferencia de cualquier otro lenguaje de programación, se puede utilizar la palabra reservada "else" en un for. Sirve para cuando recorremos por ejemplo una lista y no encontramos lo que buscamos, el programa nos de algún tipo de feedback, porque si recorremos una lista con un for y no encontramos nada, en nuestro IDE no aparecerá nada y no sabremos si el programa se ha ejecutado o no. Podríamos utilizar el else para que el programa nos diga "No he encontrado nada". Es necesario utilizar la palabra "break" porque si el programa encuentra la palabra que buscamos, realizará las acciones de esa parte pero además realizará también las del else.
+    Muchas veces, para realizar esta misma acción sin utilizar el else, los programadores utilizan una variable temporal llamada "encontrado" con los valores True o False con la que luego dentro del bucle operan si se encuentra lo que se busca o no. Este tipo de variables que realizan esta acción se denominan "Flags de estado" o "Banderas de estado" o "Flags bandera" o "Variables bandera".
+
+    "Ámbito de una variable". También ocurre en los bucles for que, cuando se declara una variable dentro de un bucle for, esa variable no se puede utilizar fuera del bucle, su "ámbito" es el bucle y se denomina "ámbito de bucle"; sin embargo, una variable declarada fuera de un bucle se puede utilizar tanto fuera como dentro y su ámbito se denomina "ámbito global". Existen dos ámbitos más que veremos más adelante: Las variables de clase o propiedades y las variables de funciones.
+  
+    - Switch
+
+    Se utiliza para comparar una variable con determinados valores y actuar en consecuencia.
+
+    Hasta la versión 3.9 de Python incluida, no existía la funcionalidad del Swicht persé, la función se realizaba con if y elif.
+    Desde la versión 3.10 de Python si existe, se utiliza con la palabra especial "match" y diferentes "case".
+
+    - Palabra especial "pass"
+
+    Palabra que se utiliza para que el programa no realice nada del código, es decir, que cuando el programa se encuentre esta palabra, pase directamente a lo siguiente.
+    Esta palabra cumple la función de placeholder, es decir, que por ejemplo cuando sabemos que en cierta parte de nuestro programa queremos añadir un bucle pero todavía no sabemos qué lógica vamos a implementar dentro de él, ponemos la palabra "pass" y el programa no hará caso de ese bucle.
   </p>
 </body>
 </html>

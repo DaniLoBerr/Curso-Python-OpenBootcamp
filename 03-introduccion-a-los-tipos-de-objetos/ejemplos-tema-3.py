@@ -110,9 +110,11 @@ print(p.split(','))
 
 print(p.replace(',', ' ').lower().split())
 
-q= ['hola', 'esto', 'es', 'un', 'texto']
+q = ['hola', 'esto', 'es', 'un', 'texto']
 
 print(' '.join(q))
+
+print(p.isnumeric())
 
 #operadores
 
@@ -122,7 +124,12 @@ s=30
 print(r+s)
 print(r-s)
 print(r*s)
-print(r/s)
+print(round(r/s, 5))
 print(r//s)
 print(r%s)
 print(r**s)
+
+r += 5
+print(r)
+s -= 15
+print(s)
