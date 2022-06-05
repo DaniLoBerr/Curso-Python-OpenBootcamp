@@ -89,5 +89,31 @@
     Palabra que se utiliza para que el programa no realice nada del código, es decir, que cuando el programa se encuentre esta palabra, pase directamente a lo siguiente.
     Esta palabra cumple la función de placeholder, es decir, que por ejemplo cuando sabemos que en cierta parte de nuestro programa queremos añadir un bucle pero todavía no sabemos qué lógica vamos a implementar dentro de él, ponemos la palabra "pass" y el programa no hará caso de ese bucle.
   </p>
+  <p>
+    FORMATEAR STRINGS
+
+    En los ejercicios corregidos de este tema, aparecía una expresión que no entendía y es la siguiente:
+
+    Cuando queremos que un un string aparezcan variables intercaladas las cuales queremos que muestren su valor cuando imprimimos el string, se utiliza la siguiente expresión:
+      print(f"texto del string {variable} más texto {varibale}")
+    Que es lo mismo que hacer:
+      print("texto del string", variable, "más texto", variable)
+    También funciona con la F mayúscula.
+    Esto mismo se puede hacer con la función ".format()" de la siguiente manera:
+      print("texto {} mas texto {} es:".format(variable1, variable2))
+      
+    Con esto del formateo también podemos hacer que la variable se imprima con varios espacios a su izquierda poniendo : seguidos del número de espacios:
+      print(f"{variable:5})
+    Y podemos definir cuántos decimales queremos que se muestren:
+      print(f"{variable:5.2f})
+
+    Más del formateo de strings: Se puede utilizar el f-strings para cadenas de múltiples líneas:
+      print(f"""
+      {variable1:7}
+      {variable2:7}
+      """)
+
+    Y ya como un extra, por lo que veo, existen funciones nativas en python, por ejemplo, la función sum() suma dos variables directamente, sin tener que declarar previamente la función.
+  </p>
 </body>
 </html>
