@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Funciones</h1>
+  <p>
+    - Para escribir código reutilizable o reducir la complejidad del código.
+    - Solo deben utilizar tareas concretas, no hacerlas excesivamente largas.
+    - Nombrarlas bien, sobre lo que hacen
+    - Para declarar la función:
+
+      def nombre():
+        pass
+    
+    - Primero se declaran y luego se invocan cuando se quieran utilizar. Se deben declarar antes de utilizarlas en el código (porque el intérprete de python debe procesar y ejecutar la función primero).
+    - Como sabemos, el codigo se ejecuta de manera secuencial. Cuando se invoca una función, el proceso de ejecución se detiene, salta al tramo de código de la función declarada, lo ejecuta y luego vuelve donde estaba. Esta acción se denomina branching o jumping.
+    - Se les puede dar parámetros, que son variables que va a utilizar la función. Su ámbito es solo local.
+    - Se pueden anidar funciones dentro de funciones. No se pueden llamar funciones fuera de su ámbito.
+    - Se pueden declarar otra variables dentro de una función pero no se pueden utilizar fuera de su ámbito.
+    - Variable shadowing: Se pueden tener dos variables nombradas iguales si se encuentran en ámbitos diferentes. En el ámbito global, la variable tendrá un valor original y en el ámbito de la función tendrá otro valor que solo será tal mientras dure la función. Con la palabra reservada "global" se puede modificar un valor de una variable desde dentro de una función y que este permaneza para el resto del programa.
+    - Parámetros opcionales: En python se pueden dar valores por defecto a una función cuando se la declara. En caso de haber varias variables parámetro en una función, no se puede dar un valor por defecto solo a la primera variable o a las dos primeras, solo está permitido dar valores por defecto a todas a la vez o solo a las últimas. Luego, cuando se invoca una función, si ya tiene valores por defecto pero se le da otros, estos se sustituirán por orden en los parámetros iniciales de la función.
+     Named parameters: Python soporta que nosostros podamos darle el valor a los parámetros en el orden que queramos, indicando el nombre de la variable parámetro, o que podamos darle un valor solo a una variable y el resto tengan el valor por defecto.
+    - *args: Cuando una función tiene muchos parámetros, utilizamos este asterisco + la palabra args (la cual es una convención, se puede utilizar cualquier nombre con el asterisco delante). Esta funcionalidad se llama "parámetros variables", que dice que en una función se pueden utilizar entre 0 y más variables. Al poner *args como parámetro cuando declaramos una función, convierte los valores que luego le demos al invocarla en una tupla. Esto nos ayuda a trabajar con muchas variables a la vez sin ir una por una, podemos operar con el args dentro de la función y hacer los que sea con la cantidad cualquiera de variables que nos den al invocar la función. Convención para un for: for arg in args.
+    - **kwargs: Convierte los valores de los parámetros en un diccionario.
+     Iterar sobre un diccionario: "for key, value in kwargs.items():". 
+  </p>
+</body>
+</html>
